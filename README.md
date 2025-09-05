@@ -13,7 +13,7 @@ Raghavendra Davarapalli
 ## Basic Workflow
 1. Clone the repository
 ```bash
-git clone https://github.com/RaghaHanuma22/Asynchronous_FIFO.git
+git clone https://github.com/RaghaHanuma22/Async_FIFO.git
 ```
 2. Create a branch for your feature/task
 ```bash
@@ -48,5 +48,11 @@ Then select your project-structure branch to compare against main
 ```bash
 git checkout main
 git pull  # Get latest including your merged changes
+```
+
+#Notes
+If for some reason when pushing to your branch if it doesn't work, do the following
+```bash
+git push --set-upstream origin <branch-name>
 ```
 
