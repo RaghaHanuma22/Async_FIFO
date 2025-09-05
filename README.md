@@ -3,6 +3,9 @@
 Repo for Asynchronous FIFO design and verification with UVM based testbench
 ![image](https://github.com/user-attachments/assets/0d7d11f9-8811-41b6-a0c8-6ef13e4794a0)
 
+FIFO depth calculation for any depth:
+<img width="1495" height="283" alt="image" src="https://github.com/user-attachments/assets/2edb67fb-5861-4c90-8d68-323e40e082a1" />
+
 # Team:
 Aravindh NL
 Maithreyi Venkatesan
