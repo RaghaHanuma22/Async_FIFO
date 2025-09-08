@@ -19,6 +19,7 @@ always_ff @(posedge w_clk or negedge arstn) begin
     end
     else if(w_en && ~full) begin
         f_mem[w_ptr] <= data_in;
+        $display("Write ptr = %d", w_ptr);
     end
 end
 
@@ -26,6 +27,7 @@ end
 always_ff @(posedge r_clk) begin
     if(~empty && r_en) begin
         data_out <= f_mem[r_ptr];
+        $display("Write ptr = %d", w_ptr);
     end
 end
 

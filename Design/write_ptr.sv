@@ -33,14 +33,18 @@ assign b_rptr_sync[2] = g_rptr_sync[2]^b_rptr_sync[3];
 assign b_rptr_sync[1] = g_rptr_sync[1]^b_rptr_sync[2];
 assign b_rptr_sync[0] = g_rptr_sync[0]^b_rptr_sync[1];
 
+/*
 assign g_wptr[5] = b_wptr_sync[5];
 assign g_wptr[4] = b_wptr_sync[5]^b_wptr_sync[4];
 assign g_wptr[3] = b_wptr_sync[4]^b_wptr_sync[3];
 assign g_wptr[2] = b_wptr_sync[3]^b_wptr_sync[2];
 assign g_wptr[1] = b_wptr_sync[2]^b_wptr_sync[1];
 assign g_wptr[0] = b_wptr_sync[1]^b_wptr_sync[0];
+*/
 
-assign full = (b_wptr[4:0] == b_rptr_sync[4:0] && b_wptr[5] != b_rptr_sync[5]);
+assign g_wptr = b_wptr ^ (b_wptr>>1);
+
+assign full = ((b_wptr[4:0] == b_rptr_sync[4:0]) && (b_wptr[5] != b_rptr_sync[5]));
 endmodule
 
 
