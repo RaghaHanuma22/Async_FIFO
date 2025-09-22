@@ -32,7 +32,7 @@ repeat(60) begin
 data_in = $urandom_range(0,10);
 @(posedge w_clk);
 end
-w_en = 0;
+//w_en = 0;
 #20;
 
 
@@ -41,6 +41,8 @@ end
 initial begin
 #50;
 r_en = 1;
+#1000;
+r_en = 0;
 #2000;
 $stop();
 end
@@ -50,10 +52,13 @@ initial begin
 $display("wptr = %d and data in fifo = %d",DUT.w_inst.b_wptr,DUT.f_memory_inst.f_mem[34]);
 end
 
+/*
 initial begin
-$monitor($time, "wrst = %0d, rrst = %0d, w_en = %0d, r_en = %0d, data_in = %0d, data_out = %0d, full = %0d and empty = %0d, wptr = %d and rptr = %d, g_rptr = %b, g_wptr_sync = %b",wrst_n,rrst_n,w_en,r_en,data_in,data_out,full,empty,DUT.w_inst.b_wptr, DUT.r_inst.b_rptr,DUT.r_inst.g_rptr,DUT.r_inst.g_wptr_sync);
+$monitor($time, "wrst = %0d, rrst = %0d, w_en = %0d, r_en = %0d, data_in = %0d, data_out = %0d, full = %0d and empty = %0d, wptr = %d and rptr = %d, g_rptr_nxt = %b, g_wptr_sync = %b",wrst_n,rrst_n,w_en,r_en,data_in,data_out,full,empty,DUT.w_inst.b_wptr, DUT.r_inst.b_rptr,DUT.r_inst.g_rptr,DUT.r_inst.g_wptr_sync);
 end
+*/
 
-
+always @(posedge w_clk) $display($time, "[W_CLk] wrst = %0d, rrst = %0d, w_en = %0d, r_en = %0d, data_in = %0d, data_out = %0d, full = %0d and empty = %0d, wptr = %d and rptr = %d, g_rptr_nxt = %b, g_wptr_sync = %b",wrst_n,rrst_n,w_en,r_en,data_in,data_out,full,empty,DUT.w_inst.b_wptr, DUT.r_inst.b_rptr,DUT.r_inst.g_rptr_next,DUT.r_inst.g_wptr_sync);
+always @(posedge r_clk) $display($time, "[R_CLk] wrst = %0d, rrst = %0d, w_en = %0d, r_en = %0d, data_in = %0d, data_out = %0d, full = %0d and empty = %0d, wptr = %d and rptr = %d, g_rptr_nxt = %b, g_wptr_sync = %b",wrst_n,rrst_n,w_en,r_en,data_in,data_out,full,empty,DUT.w_inst.b_wptr, DUT.r_inst.b_rptr,DUT.r_inst.g_rptr_next,DUT.r_inst.g_wptr_sync);
 
 endmodule

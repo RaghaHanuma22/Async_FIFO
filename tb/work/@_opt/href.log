@@ -1,0 +1,11 @@
+BEGIN 1:read_ptr_handler:fast:work
+    g_wptr_sync :  1:tb:fast:work
+    g_rptr :  1:tb:fast:work
+    b_rptr :  1:tb:fast:work
+END 
+BEGIN 1:w_ptr:fast:work
+    b_wptr :  1:tb:fast:work
+END 
+BEGIN 1:fifo_mem:fast:work
+    f_mem :  1:tb:fast:work
+END 

@@ -1,0 +1,170 @@
+# QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 23:27:17 on Sep 14,2025
+# vlog ../Design/fifo_mem.sv ../Design/read_ptr.sv ../Design/synchronizer.sv ../Design/top.sv ../Design/write_ptr.sv tb.sv 
+# -- Compiling module fifo_mem
+# -- Compiling module read_ptr_handler
+# -- Compiling module sync
+# -- Compiling module top
+# -- Compiling module w_ptr
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 23:27:18 on Sep 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim tb 
+# Start time: 23:27:40 on Sep 14,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tb(fast)
+#                    0wrst = 0, rrst = 0, w_en = 0, r_en = 0, data_in = 0, data_out = x, full = 0 and empty = 1, wptr =  9 and rptr =  9, g_rptr = 001101, g_wptr_sync = 000000
+#                   50wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = x, full = 0 and empty = 1, wptr =  9 and rptr =  9, g_rptr = 001101, g_wptr_sync = 000000
+#                   60wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = x, full = 0 and empty = 0, wptr =  9 and rptr =  9, g_rptr = 001101, g_wptr_sync = 000000
+#                   65wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = x, full = 0 and empty = 0, wptr = 10 and rptr =  9, g_rptr = 001101, g_wptr_sync = 000000
+#                   70wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = x, full = 0 and empty = 0, wptr = 10 and rptr =  9, g_rptr = 001101, g_wptr_sync = 000000
+#                   91wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = x, full = 0 and empty = 0, wptr = 11 and rptr =  9, g_rptr = 001101, g_wptr_sync = 000000
+#                  100wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 0, full = 0 and empty = 0, wptr = 11 and rptr = 10, g_rptr = 001111, g_wptr_sync = 001101
+#                  117wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 0, full = 0 and empty = 0, wptr = 12 and rptr = 10, g_rptr = 001111, g_wptr_sync = 001101
+#                  140wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 0, full = 0 and empty = 0, wptr = 12 and rptr = 11, g_rptr = 001110, g_wptr_sync = 001110
+#                  143wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 0, full = 0 and empty = 0, wptr = 13 and rptr = 11, g_rptr = 001110, g_wptr_sync = 001110
+#                  169wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 0, full = 0 and empty = 0, wptr = 14 and rptr = 11, g_rptr = 001110, g_wptr_sync = 001110
+#                  180wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 1, full = 0 and empty = 1, wptr = 14 and rptr = 12, g_rptr = 001010, g_wptr_sync = 001010
+#                  195wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 9, data_out = 1, full = 0 and empty = 1, wptr = 15 and rptr = 12, g_rptr = 001010, g_wptr_sync = 001010
+#                  220wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 9, data_out = 1, full = 0 and empty = 1, wptr = 15 and rptr = 12, g_rptr = 001010, g_wptr_sync = 001001
+#                  221wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 9, data_out = 1, full = 0 and empty = 1, wptr = 16 and rptr = 12, g_rptr = 001010, g_wptr_sync = 001001
+#                  247wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 1, full = 0 and empty = 1, wptr = 17 and rptr = 12, g_rptr = 001010, g_wptr_sync = 001001
+#                  260wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 1, full = 0 and empty = 0, wptr = 17 and rptr = 12, g_rptr = 001010, g_wptr_sync = 001000
+#                  273wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = 1, full = 0 and empty = 0, wptr = 18 and rptr = 12, g_rptr = 001010, g_wptr_sync = 001000
+#                  299wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = 1, full = 0 and empty = 0, wptr = 19 and rptr = 12, g_rptr = 001010, g_wptr_sync = 001000
+#                  300wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = 4, full = 0 and empty = 0, wptr = 19 and rptr = 13, g_rptr = 001011, g_wptr_sync = 011001
+#                  325wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 3, data_out = 4, full = 0 and empty = 0, wptr = 20 and rptr = 13, g_rptr = 001011, g_wptr_sync = 011001
+#                  340wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 3, data_out = 1, full = 0 and empty = 0, wptr = 20 and rptr = 14, g_rptr = 001001, g_wptr_sync = 011010
+#                  351wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 1, full = 0 and empty = 0, wptr = 21 and rptr = 14, g_rptr = 001001, g_wptr_sync = 011010
+#                  377wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 1, full = 0 and empty = 0, wptr = 22 and rptr = 14, g_rptr = 001001, g_wptr_sync = 011010
+#                  380wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 4, full = 0 and empty = 0, wptr = 22 and rptr = 15, g_rptr = 001000, g_wptr_sync = 011110
+#                  403wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 4, full = 0 and empty = 0, wptr = 23 and rptr = 15, g_rptr = 001000, g_wptr_sync = 011110
+#                  420wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 10, full = 0 and empty = 0, wptr = 23 and rptr = 16, g_rptr = 011000, g_wptr_sync = 011101
+#                  429wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 10, full = 0 and empty = 0, wptr = 24 and rptr = 16, g_rptr = 011000, g_wptr_sync = 011101
+#                  455wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 10, full = 0 and empty = 0, wptr = 25 and rptr = 16, g_rptr = 011000, g_wptr_sync = 011101
+#                  460wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 9, full = 0 and empty = 0, wptr = 25 and rptr = 17, g_rptr = 011001, g_wptr_sync = 011100
+#                  481wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 9, full = 0 and empty = 0, wptr = 26 and rptr = 17, g_rptr = 011001, g_wptr_sync = 011100
+#                  500wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 9, full = 0 and empty = 0, wptr = 26 and rptr = 18, g_rptr = 011011, g_wptr_sync = 010101
+#                  507wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 3, data_out = 9, full = 0 and empty = 0, wptr = 27 and rptr = 18, g_rptr = 011011, g_wptr_sync = 010101
+#                  533wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 9, full = 0 and empty = 0, wptr = 28 and rptr = 18, g_rptr = 011011, g_wptr_sync = 010101
+#                  540wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 2, full = 0 and empty = 0, wptr = 28 and rptr = 19, g_rptr = 011010, g_wptr_sync = 010111
+#                  559wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 7, data_out = 2, full = 0 and empty = 0, wptr = 29 and rptr = 19, g_rptr = 011010, g_wptr_sync = 010111
+#                  580wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 7, data_out = 0, full = 0 and empty = 0, wptr = 29 and rptr = 20, g_rptr = 011110, g_wptr_sync = 010010
+#                  585wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 7, data_out = 0, full = 0 and empty = 0, wptr = 30 and rptr = 20, g_rptr = 011110, g_wptr_sync = 010010
+#                  611wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 7, data_out = 0, full = 0 and empty = 0, wptr = 31 and rptr = 20, g_rptr = 011110, g_wptr_sync = 010010
+#                  620wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 7, data_out = 0, full = 0 and empty = 0, wptr = 31 and rptr = 21, g_rptr = 011111, g_wptr_sync = 010011
+#                  637wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 3, data_out = 0, full = 0 and empty = 0, wptr = 32 and rptr = 21, g_rptr = 011111, g_wptr_sync = 010011
+#                  660wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 3, data_out = 3, full = 0 and empty = 0, wptr = 32 and rptr = 22, g_rptr = 011101, g_wptr_sync = 010000
+#                  663wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 3, full = 0 and empty = 0, wptr = 33 and rptr = 22, g_rptr = 011101, g_wptr_sync = 010000
+#                  689wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 3, full = 0 and empty = 0, wptr = 34 and rptr = 22, g_rptr = 011101, g_wptr_sync = 010000
+#                  700wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 4, full = 0 and empty = 0, wptr = 34 and rptr = 23, g_rptr = 011100, g_wptr_sync = 110000
+#                  715wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 4, full = 0 and empty = 0, wptr = 35 and rptr = 23, g_rptr = 011100, g_wptr_sync = 110000
+#                  740wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 4, full = 0 and empty = 0, wptr = 35 and rptr = 24, g_rptr = 010100, g_wptr_sync = 110011
+#                  741wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 7, data_out = 4, full = 0 and empty = 0, wptr = 36 and rptr = 24, g_rptr = 010100, g_wptr_sync = 110011
+#                  767wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 4, full = 0 and empty = 0, wptr = 37 and rptr = 24, g_rptr = 010100, g_wptr_sync = 110011
+#                  780wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 2, full = 0 and empty = 0, wptr = 37 and rptr = 25, g_rptr = 010101, g_wptr_sync = 110010
+#                  793wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 2, full = 0 and empty = 0, wptr = 38 and rptr = 25, g_rptr = 010101, g_wptr_sync = 110010
+#                  819wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 2, full = 0 and empty = 0, wptr = 39 and rptr = 25, g_rptr = 010101, g_wptr_sync = 110010
+#                  820wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 8, full = 0 and empty = 0, wptr = 39 and rptr = 26, g_rptr = 010111, g_wptr_sync = 110111
+#                  845wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 8, full = 0 and empty = 0, wptr = 40 and rptr = 26, g_rptr = 010111, g_wptr_sync = 110111
+#                  860wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 8, full = 0 and empty = 0, wptr = 40 and rptr = 27, g_rptr = 010110, g_wptr_sync = 110100
+#                  871wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 8, full = 0 and empty = 0, wptr = 41 and rptr = 27, g_rptr = 010110, g_wptr_sync = 110100
+#                  897wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 8, full = 0 and empty = 0, wptr = 42 and rptr = 27, g_rptr = 010110, g_wptr_sync = 110100
+#                  900wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 4, full = 0 and empty = 0, wptr = 42 and rptr = 28, g_rptr = 010010, g_wptr_sync = 111100
+#                  923wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 4, full = 0 and empty = 0, wptr = 43 and rptr = 28, g_rptr = 010010, g_wptr_sync = 111100
+#                  940wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 3, full = 0 and empty = 0, wptr = 43 and rptr = 29, g_rptr = 010011, g_wptr_sync = 111111
+#                  949wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 3, full = 0 and empty = 0, wptr = 44 and rptr = 29, g_rptr = 010011, g_wptr_sync = 111111
+#                  975wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 3, full = 0 and empty = 0, wptr = 45 and rptr = 29, g_rptr = 010011, g_wptr_sync = 111111
+#                  980wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 10, full = 0 and empty = 0, wptr = 45 and rptr = 30, g_rptr = 010001, g_wptr_sync = 111110
+#                 1001wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 10, full = 0 and empty = 0, wptr = 46 and rptr = 30, g_rptr = 010001, g_wptr_sync = 111110
+# wptr = 46 and data in fifo =   4
+#                 1020wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 7, full = 0 and empty = 0, wptr = 46 and rptr = 31, g_rptr = 010000, g_wptr_sync = 111011
+#                 1027wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 7, full = 0 and empty = 0, wptr = 47 and rptr = 31, g_rptr = 010000, g_wptr_sync = 111011
+#                 1053wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = 7, full = 0 and empty = 0, wptr = 48 and rptr = 31, g_rptr = 010000, g_wptr_sync = 111011
+#                 1060wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = 7, full = 0 and empty = 0, wptr = 48 and rptr = 32, g_rptr = 110000, g_wptr_sync = 111001
+#                 1079wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 7, full = 0 and empty = 0, wptr = 49 and rptr = 32, g_rptr = 110000, g_wptr_sync = 111001
+#                 1100wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 7, full = 0 and empty = 0, wptr = 49 and rptr = 33, g_rptr = 110001, g_wptr_sync = 101000
+#                 1105wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 5, data_out = 7, full = 0 and empty = 0, wptr = 50 and rptr = 33, g_rptr = 110001, g_wptr_sync = 101000
+#                 1131wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 7, full = 0 and empty = 0, wptr = 51 and rptr = 33, g_rptr = 110001, g_wptr_sync = 101000
+#                 1140wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 3, full = 0 and empty = 0, wptr = 51 and rptr = 34, g_rptr = 110011, g_wptr_sync = 101001
+#                 1157wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 3, full = 0 and empty = 0, wptr = 52 and rptr = 34, g_rptr = 110011, g_wptr_sync = 101001
+#                 1180wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 4, full = 0 and empty = 0, wptr = 52 and rptr = 35, g_rptr = 110010, g_wptr_sync = 101010
+#                 1183wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = 4, full = 0 and empty = 0, wptr = 53 and rptr = 35, g_rptr = 110010, g_wptr_sync = 101010
+#                 1209wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = 4, full = 0 and empty = 0, wptr = 54 and rptr = 35, g_rptr = 110010, g_wptr_sync = 101010
+#                 1220wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 0, data_out = 2, full = 0 and empty = 0, wptr = 54 and rptr = 36, g_rptr = 110110, g_wptr_sync = 101110
+#                 1235wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 9, data_out = 2, full = 0 and empty = 0, wptr =  9 and rptr = 36, g_rptr = 110110, g_wptr_sync = 101110
+#                 1260wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 9, data_out = 2, full = 0 and empty = 0, wptr =  9 and rptr = 37, g_rptr = 110111, g_wptr_sync = 101101
+#                 1261wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 2, full = 0 and empty = 0, wptr = 10 and rptr = 37, g_rptr = 110111, g_wptr_sync = 101101
+#                 1287wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 2, full = 0 and empty = 0, wptr = 11 and rptr = 37, g_rptr = 110111, g_wptr_sync = 101101
+#                 1300wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 7, full = 0 and empty = 0, wptr = 11 and rptr = 38, g_rptr = 110101, g_wptr_sync = 001101
+#                 1313wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 5, data_out = 7, full = 0 and empty = 0, wptr = 12 and rptr = 38, g_rptr = 110101, g_wptr_sync = 001101
+#                 1339wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 7, full = 0 and empty = 0, wptr = 13 and rptr = 38, g_rptr = 110101, g_wptr_sync = 001101
+#                 1340wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 1, full = 0 and empty = 0, wptr = 13 and rptr = 39, g_rptr = 110100, g_wptr_sync = 001110
+#                 1365wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 1, full = 0 and empty = 0, wptr = 14 and rptr = 39, g_rptr = 110100, g_wptr_sync = 001110
+#                 1380wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 1, full = 0 and empty = 0, wptr = 14 and rptr = 40, g_rptr = 111100, g_wptr_sync = 001011
+#                 1391wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 4, data_out = 1, full = 0 and empty = 0, wptr = 15 and rptr = 40, g_rptr = 111100, g_wptr_sync = 001011
+#                 1417wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 5, data_out = 1, full = 0 and empty = 0, wptr = 16 and rptr = 40, g_rptr = 111100, g_wptr_sync = 001011
+#                 1420wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 5, data_out = 4, full = 0 and empty = 0, wptr = 16 and rptr = 41, g_rptr = 111101, g_wptr_sync = 001001
+#                 1443wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 4, full = 0 and empty = 0, wptr = 17 and rptr = 41, g_rptr = 111101, g_wptr_sync = 001001
+#                 1460wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 4, full = 0 and empty = 0, wptr = 17 and rptr = 42, g_rptr = 111111, g_wptr_sync = 011000
+#                 1469wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 1, data_out = 4, full = 0 and empty = 0, wptr = 18 and rptr = 42, g_rptr = 111111, g_wptr_sync = 011000
+#                 1495wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 3, data_out = 4, full = 0 and empty = 0, wptr = 19 and rptr = 42, g_rptr = 111111, g_wptr_sync = 011000
+#                 1500wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 3, data_out = 8, full = 0 and empty = 0, wptr = 19 and rptr = 43, g_rptr = 111110, g_wptr_sync = 011001
+#                 1521wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 8, full = 0 and empty = 0, wptr = 20 and rptr = 43, g_rptr = 111110, g_wptr_sync = 011001
+#                 1540wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 10, data_out = 8, full = 0 and empty = 0, wptr = 20 and rptr = 44, g_rptr = 111010, g_wptr_sync = 011010
+#                 1547wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 5, data_out = 8, full = 0 and empty = 0, wptr = 21 and rptr = 44, g_rptr = 111010, g_wptr_sync = 011010
+#                 1573wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 8, full = 0 and empty = 0, wptr = 22 and rptr = 44, g_rptr = 111010, g_wptr_sync = 011010
+#                 1580wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 2, data_out = 2, full = 0 and empty = 0, wptr = 22 and rptr = 45, g_rptr = 111011, g_wptr_sync = 011110
+#                 1599wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 2, full = 0 and empty = 0, wptr = 23 and rptr = 45, g_rptr = 111011, g_wptr_sync = 011110
+#                 1620wrst = 1, rrst = 1, w_en = 1, r_en = 1, data_in = 8, data_out = 8, full = 0 and empty = 0, wptr = 23 and rptr = 46, g_rptr = 111001, g_wptr_sync = 011101
+#                 1625wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 8, full = 0 and empty = 0, wptr = 24 and rptr = 46, g_rptr = 111001, g_wptr_sync = 011101
+#                 1651wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 8, full = 0 and empty = 0, wptr = 25 and rptr = 46, g_rptr = 111001, g_wptr_sync = 011101
+#                 1660wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 10, full = 0 and empty = 0, wptr = 25 and rptr = 47, g_rptr = 111000, g_wptr_sync = 011100
+#                 1677wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 10, full = 0 and empty = 0, wptr = 26 and rptr = 47, g_rptr = 111000, g_wptr_sync = 011100
+#                 1700wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 4, full = 0 and empty = 0, wptr = 26 and rptr = 48, g_rptr = 101000, g_wptr_sync = 010101
+#                 1703wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 4, full = 0 and empty = 0, wptr = 27 and rptr = 48, g_rptr = 101000, g_wptr_sync = 010101
+#                 1729wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 4, full = 0 and empty = 0, wptr = 28 and rptr = 48, g_rptr = 101000, g_wptr_sync = 010101
+#                 1740wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 2, full = 0 and empty = 0, wptr = 28 and rptr = 49, g_rptr = 101001, g_wptr_sync = 010111
+#                 1755wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 2, full = 0 and empty = 0, wptr = 29 and rptr = 49, g_rptr = 101001, g_wptr_sync = 010111
+#                 1780wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 0, full = 0 and empty = 0, wptr = 29 and rptr = 50, g_rptr = 101011, g_wptr_sync = 010010
+#                 1781wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 0, full = 0 and empty = 0, wptr = 30 and rptr = 50, g_rptr = 101011, g_wptr_sync = 010010
+#                 1807wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 0, full = 0 and empty = 0, wptr = 31 and rptr = 50, g_rptr = 101011, g_wptr_sync = 010010
+#                 1820wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 10, full = 0 and empty = 0, wptr = 31 and rptr = 51, g_rptr = 101010, g_wptr_sync = 010011
+#                 1833wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 10, full = 0 and empty = 0, wptr = 32 and rptr = 51, g_rptr = 101010, g_wptr_sync = 010011
+#                 1859wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 10, full = 0 and empty = 0, wptr = 33 and rptr = 51, g_rptr = 101010, g_wptr_sync = 010011
+#                 1860wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 5, full = 0 and empty = 0, wptr = 33 and rptr = 52, g_rptr = 101110, g_wptr_sync = 010000
+#                 1885wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 5, full = 0 and empty = 0, wptr = 34 and rptr = 52, g_rptr = 101110, g_wptr_sync = 010000
+#                 1900wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 1, full = 0 and empty = 0, wptr = 34 and rptr = 53, g_rptr = 101111, g_wptr_sync = 110001
+#                 1911wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 1, full = 0 and empty = 0, wptr = 35 and rptr = 53, g_rptr = 101111, g_wptr_sync = 110001
+#                 1937wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 1, full = 0 and empty = 0, wptr = 36 and rptr = 53, g_rptr = 101111, g_wptr_sync = 110001
+#                 1940wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 8, full = 0 and empty = 0, wptr = 36 and rptr = 54, g_rptr = 101101, g_wptr_sync = 110011
+#                 1963wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 8, full = 0 and empty = 0, wptr = 37 and rptr = 54, g_rptr = 101101, g_wptr_sync = 110011
+#                 1980wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = x, full = 0 and empty = 0, wptr = 37 and rptr =  9, g_rptr = 001101, g_wptr_sync = 110110
+#                 1989wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = x, full = 0 and empty = 0, wptr = 38 and rptr =  9, g_rptr = 001101, g_wptr_sync = 110110
+#                 2015wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = x, full = 0 and empty = 0, wptr = 39 and rptr =  9, g_rptr = 001101, g_wptr_sync = 110110
+#                 2020wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 0, full = 0 and empty = 0, wptr = 39 and rptr = 10, g_rptr = 001111, g_wptr_sync = 110111
+#                 2041wrst = 1, rrst = 1, w_en = 0, r_en = 1, data_in = 8, data_out = 0, full = 0 and empty = 0, wptr = 40 and rptr = 10, g_rptr = 001111, g_wptr_sync = 110111
+# ** Note: $stop    : tb.sv(45)
+#    Time: 2050 ns  Iteration: 0  Instance: /tb
+# Break at tb.sv line 45
+# Stopped at tb.sv line 45
+# End time: 02:15:32 on Sep 15,2025, Elapsed time: 2:47:52
+# Errors: 0, Warnings: 0
