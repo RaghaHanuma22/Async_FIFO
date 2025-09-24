@@ -1,9 +1,12 @@
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+
 class test extends uvm_test;
-`uvm_component_utils("test")
+`uvm_component_utils(test)
 
 env envir;
 wr_generator wr_seq;
-//rd_seq
+rd_seq rd_sq;
 
 function new(string name = "test",uvm_component parent);
 super.new(name,parent);
@@ -24,12 +27,12 @@ super.run_phase(phase);
 
 phase.raise_objection(this);
 wr_seq=wr_generator::type_id::create("wr_seq",this);
-//rd_seq
+rd_sq=rd_seq::type_id::create("rd_sq",this);
 fork begin
 wr_seq.start(envir.wr_a.seqr);
 end
 begin repeat(2) #20
-//rd_seq
+rd_sq.start(envir.rd_a.rd_seqr);
 end
 join
 
