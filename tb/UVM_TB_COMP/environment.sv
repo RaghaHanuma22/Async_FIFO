@@ -1,4 +1,7 @@
-class env extends uvm_environment;
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+
+class env extends uvm_env;
     `uvm_component_utils(env)
 
     wr_agent wr_a;
@@ -17,8 +20,9 @@ class env extends uvm_environment;
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
-        wr_a.mon.mon_port.connect(scb.wr_port);
-        rd_a.m.send.connect(scb.rd_port);
+        super.connect_phase(phase);
+        wr_a.mon.wr_an_port.connect(s.wr_port);
+        rd_a.m.send.connect(s.rd_port);
     endfunction
 
 endclass

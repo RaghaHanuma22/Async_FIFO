@@ -1,7 +1,7 @@
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 
-class rd_transaction #(parameter data_width = 8) extends uvm_sequence_item;
+class rd_transaction extends uvm_sequence_item;
     `uvm_object_utils(rd_transaction)
 
     
@@ -9,7 +9,7 @@ class rd_transaction #(parameter data_width = 8) extends uvm_sequence_item;
     logic r_clk;
     logic rrst_n;
     logic empty;
-    logic [data_width-1:0] data_out;
+    logic [7:0] data_out;
 
     function new (string name = "rd_transaction");
         super.new(name);

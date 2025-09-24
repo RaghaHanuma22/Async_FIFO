@@ -11,9 +11,10 @@ endfunction
 transaction tr;
 
 task body;
-tr = transaction::type_id::create("tr");
+
 
 repeat(50) begin
+    tr = transaction::type_id::create("tr");
     start_item(tr); 
     assert(tr.randomize());
     finish_item(tr);

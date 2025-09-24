@@ -1,13 +1,15 @@
-// code written by ragha, maithu, Aravindh HASFVDFASHJGfdjmhgasmjhc mashjgchjwqgkjhdgjhkqwgDHJEAGKYAJGDHJUl.oiujgwgddfkuyqkfqjnbgKHJHDSNJKVHNZSMKNBVJKZSHVPOM?L:KCV
+// code written by ragha, maithu, Aravindh
 
+`uvm_analysis_imp_decl(_wr)
+`uvm_analysis_imp_decl(_rd)
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 
 class scb extends uvm_scoreboard;
     `uvm_component_utils(scb)
 
-    uvm_analysis_imp #(transaction, scb) wr_port;
-    uvm_analysis_imp #(transaction, scb) rd_port;
+    uvm_analysis_imp_wr #(transaction, scb) wr_port;
+    uvm_analysis_imp_rd #(rd_transaction, scb) rd_port;
 
     transaction wr_transactions [$]; //Queue to store incoming write transactions
     rd_transaction rd_transactions [$]; //Queue to store incoming read transactions
@@ -22,11 +24,11 @@ class scb extends uvm_scoreboard;
         rd_port = new("rd_port",this);
     endfunction
 
-    virtual function void wr_write(transaction wr_tr);
+    virtual function void write_wr(transaction wr_tr);
     wr_transactions.push_back(wr_tr);
     endfunction
 
-    virtual function void rd_write(transaction rd_tr);
+    virtual function void write_rd(rd_transaction rd_tr);
     rd_transactions.push_back(rd_tr);
     endfunction
 
@@ -35,9 +37,9 @@ class scb extends uvm_scoreboard;
     
     forever begin
     transaction curr_wr_tr;
+    rd_transaction curr_rd_tr;
     if(wr_transactions.size()>0 && rd_transactions.size()>0) begin
     curr_wr_tr = wr_transactions.pop_front();
-    rd_transaction curr_rd_tr;
     curr_rd_tr = rd_transactions.pop_front();
     compare(curr_wr_tr,curr_rd_tr);
     end
@@ -51,11 +53,13 @@ class scb extends uvm_scoreboard;
     else begin
     `uvm_info("scb",$sformatf("R_En is disabled"),UVM_MEDIUM);
     end
-    end
+    
 */
+
+end
     endtask
 
-    task compare(transaction wr_tr, transaction rd_tr);
+    task compare(transaction wr_tr, rd_transaction rd_tr);
     
 
     //compare logic

@@ -9,7 +9,7 @@ class rd_agent extends uvm_agent;
 
     rd_drv d;
     rd_monitor m;
-    uvm_sequencer#(rd_transaction#(8)) rd_seqr;
+    uvm_sequencer#(rd_transaction ) rd_seqr;
 
     function new(string name = "rd_agent", uvm_component parent=null);
         super.new(name,parent);
@@ -19,7 +19,7 @@ class rd_agent extends uvm_agent;
         super.build_phase(phase);
         d=rd_drv::type_id::create("d",this);
         m=rd_monitor::type_id::create("m",this);
-        rd_seqr = uvm_sequencer#(rd_transaction#(8))::type_id::create("rd_seqr",this);
+        rd_seqr = uvm_sequencer#(rd_transaction)::type_id::create("rd_seqr",this);
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
